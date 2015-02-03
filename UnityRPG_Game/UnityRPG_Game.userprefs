@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\WorldMenuScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Menu\WorldMenuScript.cs" Line="34" Column="74" />
+      <File FileName="Assets\Scripts\Debug\Profiler.cs" Line="27" Column="2" />
+      <File FileName="Assets\Scripts\Player\PlayerMovementScript.cs" Line="26" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

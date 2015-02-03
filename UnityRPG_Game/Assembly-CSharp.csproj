@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A93332BF-B766-D010-B03F-99B98341CDE5}</ProjectGuid>
+	<ProjectGuid>{FB307285-832D-60E2-B466-E3776DFDA032}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,13 +39,15 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Debug\Profiler.cs" />
+     <Compile Include="Assets\Scripts\Menu\WorldMenuScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\System\CameraPixelScript.cs" />
      <Compile Include="Assets\TileEditor\Demo\Scripts\Player.cs" />
@@ -53,7 +55,7 @@
      <Compile Include="Assets\TileEditor\Scripts\TileMap.cs" />
      <Compile Include="Assets\TileEditor\Scripts\TileSet.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,6 +5,6 @@ public class CameraPixelScript : MonoBehaviour {
 
 	void Awake ()
 	{
-		camera.orthographicSize = Screen.height / 2;
+		camera.orthographicSize = ((float)Screen.height) / 4;
 	}
 }

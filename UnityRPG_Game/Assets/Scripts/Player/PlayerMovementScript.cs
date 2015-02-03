@@ -9,6 +9,9 @@ public class PlayerMovementScript : MonoBehaviour {
 	private bool moveRight;
 	private bool moveLeft;
 
+	//float used to move
+	private float moveTimer;
+
 	void Start () 
 	{
 		//turns all the bools on, so the player is able to move
@@ -16,41 +19,56 @@ public class PlayerMovementScript : MonoBehaviour {
 		moveDown = true;
 		moveRight = true;
 		moveLeft = true;
+		//enables the player to move
+		moveTimer = 1.5f;
 	}
 
-	void Update () 
+	void FixedUpdate () 
 	{
-		//moving up
-		if (Input.GetKeyDown (KeyCode.UpArrow) && moveUp || Input.GetKeyDown (KeyCode.W) && moveUp)
+		//player can only move if the movetimer is 2
+		if(moveTimer >= 1.5)
 		{
-			this.transform.Translate(0.0f, 0.0f, 32.0f);
-			moveDown = true;
-			moveRight = true;
-			moveLeft = true;
+			//moving up
+			if (Input.GetKey (KeyCode.UpArrow) && moveUp || Input.GetKey (KeyCode.W) && moveUp)
+			{
+				this.transform.Translate(0.0f, 0.0f, 32.0f);
+				moveDown = true;
+				moveRight = true;
+				moveLeft = true;
+				moveTimer = 0;
+			}
+			//moving down
+			else if (Input.GetKey (KeyCode.DownArrow) && moveDown || Input.GetKey (KeyCode.S) && moveDown)
+			{
+				this.transform.Translate(0.0f, 0.0f, -32.0f);
+				moveUp = true;
+				moveRight = true;
+				moveLeft = true;
+				moveTimer = 0;
+			}
+			//moving right
+			else if (Input.GetKey (KeyCode.RightArrow) && moveRight || Input.GetKey (KeyCode.D) && moveRight)
+			{
+				this.transform.Translate(32.0f, 0.0f, 0.0f);
+				moveUp = true;
+				moveDown = true;
+				moveLeft = true;
+				moveTimer = 0;
+			}
+			//moving left
+			else if (Input.GetKey (KeyCode.LeftArrow) && moveLeft || Input.GetKey (KeyCode.A) && moveLeft)
+			{
+				this.transform.Translate(-32.0f, 0.0f, 0.0f);
+				moveUp = true;
+				moveDown = true;
+				moveRight = true;
+				moveTimer = 0;
+			}
 		}
-		//moving down
-		else if (Input.GetKeyDown (KeyCode.DownArrow) && moveDown || Input.GetKeyDown (KeyCode.S) && moveDown)
+		//makes the player being able to move again
+		if(moveTimer < 1.5)
 		{
-			this.transform.Translate(0.0f, 0.0f, -32.0f);
-			moveUp = true;
-			moveRight = true;
-			moveLeft = true;
-		}
-		//moving right
-		else if (Input.GetKeyDown (KeyCode.RightArrow) && moveRight || Input.GetKeyDown (KeyCode.D) && moveRight)
-		{
-			this.transform.Translate(32.0f, 0.0f, 0.0f);
-			moveUp = true;
-			moveDown = true;
-			moveLeft = true;
-		}
-		//moving left
-		else if (Input.GetKeyDown (KeyCode.LeftArrow) && moveLeft || Input.GetKeyDown (KeyCode.A) && moveLeft)
-		{
-			this.transform.Translate(-32.0f, 0.0f, 0.0f);
-			moveUp = true;
-			moveDown = true;
-			moveRight = true;
+			moveTimer += 0.1f;
 		}
 	}
 
